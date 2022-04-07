@@ -1,0 +1,3 @@
+[parser.ucitati]
+ucitavanje_kod = ucitavanje.kod.ucitavanje_kod:UcitatiCSVKod
+

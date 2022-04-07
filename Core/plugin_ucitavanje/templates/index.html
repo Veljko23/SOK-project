@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
+     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css"></link>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <title>{{title}}</title>
+    {% block head_sadrzaj %}{% endblock %}
+</head>
+<body>
+<style>
+.center{
+ margin-left: 10%;
+ width: 100%;
+ border-left: solid black 1px;
+}
+#link button{
+    font-size:15px;
+}
+</style>
+<ul>
+    <div>
+              {% if plugini_ucitavanje %}
+                 {% for p in plugini_ucitavanje %}
+                    <a href="{% url 'ucitavanje_plugin' id=p.identifier %}">{{p.naziv}}</a>
+                 {% endfor %}
+              {% endif %}
+          </div>
+              <div id="link">
+                  <a href="{% url 'force_layout' %}"><button>Force layout</button></a>
+
+
+                  <a href="{% url 'tree_layout' %}"><button>Tree layout</button></a>
+
+              </div>
+          </ul>
+      <div class="center">
+          {% block content %}{% endblock %}
+      </div>
+</body>
+</html>
