@@ -31,9 +31,6 @@ def tree_layout(request):
                     utakmice.append(utakmica)
             faza.utakmice = utakmice
 
-
-
-
     return render(request, "tree.html", {"sampionati": [sampionat], "title": "Tree layout",
                                          "plugin_ucitavanje": sampionati})
 
@@ -62,6 +59,7 @@ def force_layout(request):
                 if int(rezultat1) >= int(filter) or int(rezultat2) >= int(filter):
                     utakmice.append(utakmica)
             faza.utakmice = utakmice
+            
     return render(request, "force.html", {"sampionati": [sampionat], "title": "Force layout",
                                           "plugin_ucitavanje": sampionati})
 

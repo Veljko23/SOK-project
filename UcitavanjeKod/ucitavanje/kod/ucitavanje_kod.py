@@ -29,8 +29,7 @@ class UcitatiCSVKod(UcitatiService):
             if i==0:
                 i = i+1
                 continue
-           ## if i == 10:
-             ##   break
+
             i = i+1
             data = line.split(",")
 
@@ -47,7 +46,6 @@ class UcitatiCSVKod(UcitatiService):
                         score = 0
                     else:
                         score = int(data[6]) + int(data[7])
-                    ##if score >= int(filter):
                     sampionati[data[0]].dodajUtakmicu(utakmica, "Group", data[2])
             else:
                 if term in data[5] or term in data[8]:
@@ -56,7 +54,6 @@ class UcitatiCSVKod(UcitatiService):
                     else:
 
                         score = int(data[6]) + int(data[7])
-                ##    if score >= int(filter):
                     sampionati[data[0]].dodajUtakmicu(utakmica, data[2], data[2])
 
         return sampionati
