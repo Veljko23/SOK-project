@@ -59,7 +59,7 @@ def force_layout(request):
                 if int(rezultat1) >= int(filter) or int(rezultat2) >= int(filter):
                     utakmice.append(utakmica)
             faza.utakmice = utakmice
-            
+
     return render(request, "force.html", {"sampionati": [sampionat], "title": "Force layout",
                                           "plugin_ucitavanje": sampionati})
 
